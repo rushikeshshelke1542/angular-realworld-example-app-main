@@ -16,7 +16,9 @@ pipeline {
         stage('Build Angular App') {
             steps {
                 sh 'npm install'
+                sh  'which node'
                 sh 'npm run build --prod'
+
             }
         }
         stage('Build Docker Image') {
