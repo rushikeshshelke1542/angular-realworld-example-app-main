@@ -32,8 +32,6 @@ pipeline {
         }
         stage('Push Docker Image') {
             steps {
-                env.PATH = "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
-                sh 'docker --version'
                 withDockerRegistry([credentialsId: 'docker-hub-credentials', url: 'https://index.docker.io/v1/']) {
                     sh 'docker push $IMAGE_NAME:$BUILD_ID_TAG'
                 }
