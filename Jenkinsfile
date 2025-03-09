@@ -11,17 +11,15 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                retry(3){
-                    
-                git branch: 'main', url: 'https://github.com/rushikeshshelke1542/angular-realworld-example-app-main.git'
-            }
+                retry(3) {
+                    git branch: 'main', url: 'https://github.com/rushikeshshelke1542/angular-realworld-example-app-main.git'
+                }
             }
         }
         stage('Build Angular App') {
             steps {
                 sh 'npm install'
-                sh 'npm run build --prod'
-
+                sh 'npm run build --configuration=production'
             }
         }
         stage('Build Docker Image') {
