@@ -1,6 +1,7 @@
 pipeline {
     agent any
     environment {
+
         IMAGE_NAME = "rushikeshshelke1542/angular-app/angular-frontend"
         BUILD_ID_TAG = "${BUILD_ID}"
     }
@@ -17,6 +18,8 @@ pipeline {
                 script {
                     def app = docker.build("${IMAGE_NAME}:${BUILD_ID_TAG}")
                     env.APP_IMAGE = "${IMAGE_NAME}:${BUILD_ID_TAG}"
+                    sh 'which docker'
+                    sh 'docker --version'
                 }
             }
         }
