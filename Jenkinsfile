@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        IMAGE_NAME = "rushikeshshelke1542/angular-app/angular-frontend"
+        IMAGE_NAME = "rushikeshshelke1542/angular-app"
         BUILD_ID_TAG = "${BUILD_ID}"
         PATH = "/Users/rushikeshshelke/.nvm/versions/node/v22.9.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin"
         NODE_HOME = "/Users/rushikeshshelke/.nvm/versions/node/v22.9.0"
