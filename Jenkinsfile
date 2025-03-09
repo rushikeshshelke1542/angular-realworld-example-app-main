@@ -13,7 +13,7 @@ pipeline {
             steps {
                 retry(3){
                     
-                git branch: 'main', url: 'https://github.com/rushikeshshelke1542/angular-realworld-example-app-main.git'
+                git branch: 'main', url: 'https://github.com/rushikeshshelke1542/angular-realworld-example-app.git'
             }
             }
         }
